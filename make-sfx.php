@@ -22,7 +22,7 @@ echo '$files = [' .PHP_EOL;
 while ($line = trim(fgets(STDIN), "\n")) {
 	$local_pn = $line;
 	$pn = remotePn($local_pn, $strip_n);
-	var_export([$pn, file_get_contents($local_pn)]); echo ",\n";
+	var_export([$pn, gzdeflate(file_get_contents($local_pn), 9, ZLIB_ENCODING_RAW)]); echo ",\n";
 }
 
 echo "\n];\n";
