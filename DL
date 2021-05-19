@@ -1,0 +1,10 @@
+#!/usr/bin/env rc
+
+flag e +
+
+mkdir -p tarball
+mv tarball JUNK
+rm -rf JUNK &
+
+mkdir tarball
+@ { cd tarball; wget https://wordpress.org/wordpress-5.6.3.tar.gz }
